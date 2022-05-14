@@ -1,0 +1,8 @@
+using namespace std; ----> permet dutiliser le name space std sans le mentionner 
+ === cout << "LALALALAA!" << endl; --->endl permit dafficher le retour a la ligne
+
+affichage sans lutilisation de using namespace
+std::cout << "HELLO"\n; ----> utilise lobjet cout  present dans le namespace std pour recuperer le parametre hello
+std::cout << "LALALALAA!" << std::endl;
+
+ne pas re appeler this dans les nom de variable ---> this->name === pas tres propre 
