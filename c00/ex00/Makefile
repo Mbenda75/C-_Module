@@ -6,7 +6,7 @@
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/14 13:41:13 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/14 17:55:27 by benmoham         ###   ########.fr        #
+#    Updated: 2022/05/18 09:36:43 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS			= $(SRC:.cpp=.o)
 
 NAME			= megaphone
 
-CFLAGS			= -Wall -Wextra -Werror 
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 RM				= rm -f
 
