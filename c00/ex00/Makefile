@@ -6,7 +6,7 @@
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/14 13:41:13 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/18 09:36:43 by benmoham         ###   ########.fr        #
+#    Updated: 2022/05/21 19:23:21 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 RM				= rm -f
 
-CC				= clang++
+CC				= c++
 
-.c.o:
+.cpp.o:
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)

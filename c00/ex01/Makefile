@@ -6,14 +6,14 @@
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:34:29 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/21 17:29:29 by benmoham         ###   ########.fr        #
+#    Updated: 2022/05/21 19:23:17 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC=   Contact.cpp \
 		main.cpp\
-		 Phonebook.cpp\
+		 Phonebook.cpp
 
 OBJS			= $(SRC:.cpp=.o)
 
@@ -23,9 +23,9 @@ CFLAGS			= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 RM				= rm -f
 
-CC				= clang++
+CC				= c++
 
-.c.o:
+.cpp.o:
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)

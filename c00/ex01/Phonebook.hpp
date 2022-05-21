@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:54:52 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/21 17:26:32 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:40:44 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include "Contact.hpp"
 #include <cstring>
 #include <unistd.h>
+#include <stdlib.h>
 
 class Phonebook
 {
@@ -31,10 +32,10 @@ class Phonebook
 		
 		void	ADD();
 		void	SEARCH();
-		int		Get_nb_contact() const ;//Getteur permettant de recuperer les donnnes de ma variable privee
 		
 	private:
 		int		_nb_contact;
+		int		_save;
 };
 
 #endif /* ******************************************************* PHONEBOOK_H */

@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:54:59 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/21 17:43:33 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/21 19:48:07 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Phonebook::Phonebook() : _nb_contact(0)
+Phonebook::Phonebook() : _nb_contact(0), _save(0)
 {
 }
 
@@ -28,15 +28,6 @@ Phonebook::Phonebook() : _nb_contact(0)
 Phonebook::~Phonebook()
 {
 	
-}
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-int		Phonebook::Get_nb_contact() const
-{
-	return(this->_nb_contact);
 }
 
 /*
@@ -55,7 +46,6 @@ void	Phonebook::ADD() // preciser a quel classe appartient la ft
 {
 	Contact tmp;
  	std::string s;
-	
 	std::cout << "Enter your first name : " ;
 	std::cin >> s ;
 	tmp.Set_firstname(s);
@@ -76,28 +66,32 @@ void	Phonebook::ADD() // preciser a quel classe appartient la ft
 	tmp.Set_darksecret(s);
 	 
 	if (_nb_contact >= 8)
-	{
-		_contact[7] = tmp;
+	{		
+		_contact[_save] = tmp;
 		if (_nb_contact < 8)
 			_nb_contact++;
+		else if(_nb_contact >= 8)
+			_save++;
 	}
 	else{
 		_contact[_nb_contact] = tmp;
 		if (_nb_contact < 8)
 			_nb_contact++;
 	}
+	std::cin.clear();
+	std::cin.ignore(512, '\n');
 }
 
 void	Phonebook::SEARCH()
 {
-	std::string index;
+	int	i = 0;
 	int nb = 0;
 	if (_nb_contact == 0)
 	{
 		std::cout << "No contact was added " << std::endl;
 		return ;
 	}
-	while (nb < _nb_contact)
+	while (nb < _nb_contact )
 	{
 		std::cout << "|" << std::setw(10) << nb + 1;
 		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getfirstname());
@@ -107,9 +101,7 @@ void	Phonebook::SEARCH()
 		nb++;
 	}
 	std::cout << "Enter the index of the repertory" << std::endl;
-	std::cin >> index;
-	int i = stoi(index);
-	if ((i >= 0 && i < 8) && (i < _nb_contact))
+	if ((std::cin >> i) && (i >= 0 && i < 8) && (i < _nb_contact))
 	{
 		std::cout << "Firstname is : " << _contact[i].getfirstname() << std::endl;
 		std::cout << "Lastname is : " <<_contact[i].getlastname() << std::endl;
@@ -117,5 +109,6 @@ void	Phonebook::SEARCH()
 	}
 	else
 		std::cout << "Bad index " << std::endl;
-	
+	std::cin.clear();
+	std::cin.ignore(512, '\n');
 }
