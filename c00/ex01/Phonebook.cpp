@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:54:59 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/21 19:48:07 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:46:33 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,40 +46,40 @@ void	Phonebook::ADD() // preciser a quel classe appartient la ft
 {
 	Contact tmp;
  	std::string s;
+	 
 	std::cout << "Enter your first name : " ;
-	std::cin >> s ;
-	tmp.Set_firstname(s);
+	getline(std::cin, s);
+	tmp.setFirstname(s);
 	
 	std::cout << "Enter your last name : ";
-	std::cin >> s;
-	tmp.Set_lastname(s);
+	getline(std::cin, s);
+	tmp.setLastname(s);
 	
 	std::cout << "Enter your nickname : ";
-	std::cin >> s;
-	tmp.Set_nickname(s);
+	getline(std::cin, s);
+	tmp.setNickname(s);
 	
 	std::cout << "Enter your phone numer :";
-	std::cin >> s;
-	tmp.Set_number(s);
+	getline(std::cin, s);
+	tmp.setNumber(s);
+	
 	std::cout << "Enter your darkest secret :";
-	std::cin >> s;
-	tmp.Set_darksecret(s);
-	 
-	if (_nb_contact >= 8)
+	getline(std::cin, s);
+	tmp.setDarksecret(s);
+
+	if (_nb_contact > 7)
 	{		
 		_contact[_save] = tmp;
-		if (_nb_contact < 8)
+		if (_nb_contact <= 7)
 			_nb_contact++;
-		else if(_nb_contact >= 8)
+		else if(_nb_contact >= 7)
 			_save++;
 	}
 	else{
 		_contact[_nb_contact] = tmp;
-		if (_nb_contact < 8)
+		if (_nb_contact <= 7)
 			_nb_contact++;
 	}
-	std::cin.clear();
-	std::cin.ignore(512, '\n');
 }
 
 void	Phonebook::SEARCH()
@@ -93,19 +93,21 @@ void	Phonebook::SEARCH()
 	}
 	while (nb < _nb_contact )
 	{
-		std::cout << "|" << std::setw(10) << nb + 1;
-		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getfirstname());
-		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getlastname());
-		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getnickname());
+		std::cout << "|" << std::setw(10) << nb;
+		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getFirstname());
+		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getLastname());
+		std::cout << "|" << std::setw(10) << truncate(_contact[nb].getNickname());
 		std::cout << "|" << std::endl;
 		nb++;
 	}
 	std::cout << "Enter the index of the repertory" << std::endl;
-	if ((std::cin >> i) && (i >= 0 && i < 8) && (i < _nb_contact))
+	if ((std::cin >> i) && (i >= 0 && i <= 7) && (i < _nb_contact))
 	{
-		std::cout << "Firstname is : " << _contact[i].getfirstname() << std::endl;
-		std::cout << "Lastname is : " <<_contact[i].getlastname() << std::endl;
-		std::cout << "Nickname is : " <<_contact[i].getnickname() << std::endl;
+		std::cout << "Firstname is : " << _contact[i].getFirstname() << std::endl;
+		std::cout << "Lastname is : " <<_contact[i].getLastname() << std::endl;
+		std::cout << "Nickname is : " <<_contact[i].getNickname() << std::endl;
+		std::cout << "Number is : " <<_contact[i].getNumber() << std::endl;
+		std::cout << "Darksecret is : " <<_contact[i].getDarksecret() << std::endl;
 	}
 	else
 		std::cout << "Bad index " << std::endl;

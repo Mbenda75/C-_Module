@@ -5,36 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 20:33:08 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 17:48:16 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/23 16:57:47 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/24 16:50:21 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-	Contact contact;
-	Phonebook repertory;
-	std::string s;
-	
-	(void)av;
-	if (ac > 1)
-		return(1);
-	while(1)
-	{
-		std::cout << "Phonebook option : ADD | SEARCH | EXIT" << std::endl;
-		if (!(std::getline(std::cin, s)))
-			break ;
-		if (s == "ADD")
-			repertory.ADD();
-		else if(s == "SEARCH")
-			repertory.SEARCH();
-		else if (s == "EXIT")
-		{
-			std::cout << "Bye bye " << std::endl;
-			return (1);
-		}
-	}
+    Zombie first;
 }

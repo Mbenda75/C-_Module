@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 13:42:57 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 17:49:34 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/23 19:17:27 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/24 16:50:50 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main(int ac, char **av)
+# include <iostream>
+# include <string>
+
+class Zombie
 {
-	int i;
-	int j;
-	
-	std::string s;
-	i = 1;
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	while(av[i])
-	{
-		j = 0;
-		while(av[i][j])
-		{
-			if (av[i][j] >= 'a' && av[i][j] <= 'z' )
-			{
-				s = toupper(av[i][j]);
-				std::cout << s;
-			}
-			else
-				std::cout << av[i][j];
-			j++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
-	return (0);
-	
-}
+
+	public:
+
+		Zombie();
+		~Zombie();
+
+		void announce( void );
+		std::string 	getName() const;
+		void	setName(std::string s);
+		Zombie* newZombie( std::string name );
+		
+	private:
+
+		std::string _name;
+
+};
+
+#endif /* ****************************************************** ZOMBIE.CPP_H */

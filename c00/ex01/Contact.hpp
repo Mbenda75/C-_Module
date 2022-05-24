@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:55:05 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/21 16:29:10 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/24 16:48:02 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ class Contact
 		Contact(void);  //constructeur
 		~Contact(void); //destructeur
 
-		void	Set_firstname(std::string s);
-		std::string getfirstname() const;
-		void	Set_lastname(std::string s);
-		std::string getlastname() const;
-		void	Set_nickname(std::string s);
-		std::string getnickname() const;
-		void	Set_number(std::string s);
-		std::string getnumber() const;
-		void	Set_darksecret(std::string s);
-		std::string getdarksecret() const;
+		void	setFirstname(std::string s);
+		std::string getFirstname() const;
+		void	setLastname(std::string s);
+		std::string getLastname() const;
+		void	setNickname(std::string s);
+		std::string getNickname() const;
+		void	setNumber(std::string s);
+		std::string getNumber() const;
+		void	setDarksecret(std::string s);
+		std::string getDarksecret() const;
 		
 	private:
 		std::string _firstname;
