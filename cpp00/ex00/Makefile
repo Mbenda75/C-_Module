@@ -5,21 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/23 19:19:20 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/23 19:19:40 by benmoham         ###   ########.fr        #
+#    Created: 2022/05/14 13:41:13 by benmoham          #+#    #+#              #
+#    Updated: 2022/05/25 14:52:22 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-SRC=   main.cpp \
-		Zombie.cpp
-		
+SRC=    megaphone.cpp \
 
 OBJS			= $(SRC:.cpp=.o)
 
-NAME			=	Zombie
+NAME			= megaphone
 
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3 
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 RM				= rm -f
 
@@ -29,8 +26,8 @@ CC				= c++
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L.
-
+				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+				
 all:			$(NAME)
 
 clean:
@@ -41,4 +38,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean c.o re 
+.PHONY:			all clean fclean cpp.o re

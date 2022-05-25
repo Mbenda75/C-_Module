@@ -5,21 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/18 09:34:29 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/21 19:23:17 by benmoham         ###   ########.fr        #
+#    Created: 2022/05/23 19:19:20 by benmoham          #+#    #+#              #
+#    Updated: 2022/05/25 15:29:15 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC=   Contact.cpp \
-		main.cpp\
-		 Phonebook.cpp
+SRC = 	main.cpp \
+		Zombie.cpp \
+		newZombie.cpp
+		
 
 OBJS			= $(SRC:.cpp=.o)
 
-NAME			=	Phonebook
+NAME			=	Zombie
 
-CFLAGS			= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3 
+CFLAGS			= -std=c++98 -Wall -Wextra -Werror -std=c++98
 
 RM				= rm -f
 

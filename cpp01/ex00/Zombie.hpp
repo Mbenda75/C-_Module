@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:17:27 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 16:50:50 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/24 20:46:59 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ class Zombie
 	public:
 
 		Zombie();
+		Zombie(std::string name);
 		~Zombie();
 
-		void announce( void );
 		std::string 	getName() const;
 		void	setName(std::string s);
-		Zombie* newZombie( std::string name );
+		
+		void announce( void ) const;
 		
 	private:
-
 		std::string _name;
 
 };
+
+Zombie* newZombie( std::string name );
 
 #endif /* ****************************************************** ZOMBIE.CPP_H */

@@ -6,15 +6,15 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:55:05 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 16:48:02 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:48:58 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
+#define CONTACT_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 #include <iomanip> 
 
 class Contact

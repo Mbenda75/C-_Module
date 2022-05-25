@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:33:08 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 17:48:16 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:42:49 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@ int main(int ac, char **av)
 	Contact contact;
 	Phonebook repertory;
 	std::string s;
-	
 	(void)av;
 	if (ac > 1)
 		return(1);
 	while(1)
 	{
+		if(std::cin.good() == 0)
+			break ;
+		if (s.size())
+			std::cout << "s = " << s << '\n';
 		std::cout << "Phonebook option : ADD | SEARCH | EXIT" << std::endl;
 		if (!(std::getline(std::cin, s)))
-			break ;
+			break ;	
 		if (s == "ADD")
 			repertory.ADD();
 		else if(s == "SEARCH")
@@ -34,7 +37,8 @@ int main(int ac, char **av)
 		else if (s == "EXIT")
 		{
 			std::cout << "Bye bye " << std::endl;
-			return (1);
+			return (0);
 		}
+		s.clear();
 	}
 }

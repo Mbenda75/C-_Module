@@ -5,18 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/14 13:41:13 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/21 19:23:21 by benmoham         ###   ########.fr        #
+#    Created: 2022/05/18 09:34:29 by benmoham          #+#    #+#              #
+#    Updated: 2022/05/25 16:43:34 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC=    megaphone.cpp \
+
+SRC=   Contact.cpp \
+		main.cpp\
+		 Phonebook.cpp
 
 OBJS			= $(SRC:.cpp=.o)
 
-NAME			= megaphone
+NAME			=	Phonebook
 
-CFLAGS			= -Wall -Wextra -Werror -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98 
 
 RM				= rm -f
 
@@ -26,7 +29,7 @@ CC				= c++
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L.
+				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all:			$(NAME)
 
@@ -38,4 +41,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean c.o re 
+.PHONY:			all clean fclean cpp.o re 

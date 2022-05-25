@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 13:42:57 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/24 17:49:34 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/23 16:57:47 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/24 20:56:00 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-	int i;
-	int j;
+	Zombie two("Benda");
+
+	Zombie Dos;
 	
-	std::string s;
-	i = 1;
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	while(av[i])
-	{
-		j = 0;
-		while(av[i][j])
-		{
-			if (av[i][j] >= 'a' && av[i][j] <= 'z' )
-			{
-				s = toupper(av[i][j]);
-				std::cout << s;
-			}
-			else
-				std::cout << av[i][j];
-			j++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
-	return (0);
-	
+	Zombie *tr = NULL;
+   tr = newZombie("Tttt");
+   delete tr;
+   return (0);
 }
