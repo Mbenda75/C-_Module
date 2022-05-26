@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:54:59 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/25 20:17:02 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:33:06 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ void	Phonebook::ADD()
 	std::cout << "Enter your first name : " ;
 	if (!(std::getline(std::cin, s)))
 		return ;
-	if(std::cin.good() == 0)
-		return  ; 
 	if(s.length() != 0 && s.empty() == false)
 	{
 		tmp.setFirstname(s);
@@ -88,8 +86,6 @@ void	Phonebook::ADD()
 	std::cout << "Enter your last name : ";
 	if (!(std::getline(std::cin, s)))
 		return ;
-	if(std::cin.good() == 0)
-		return  ; 
 	if(s.length() != 0 && s.empty() == false)
 	{
 		tmp.setLastname(s);;
@@ -99,8 +95,6 @@ void	Phonebook::ADD()
 	std::cout << "Enter your nickname : ";
 	if (!(std::getline(std::cin, s)))
 		return ;
-	if(std::cin.good() == 0)
-		return  ; 
 	if(s.length() != 0 && s.empty() == false)
 	{
 		tmp.setNickname(s);
@@ -110,8 +104,6 @@ void	Phonebook::ADD()
 	std::cout << "Enter your phone numer :";
 	if (!(std::getline(std::cin, s)))
 		return ;
-	if(std::cin.good() == 0)
-		return  ; 
 	if(s.length() != 0 && s.empty() == false)
 	{
 		tmp.setNumber(s);
@@ -121,8 +113,6 @@ void	Phonebook::ADD()
 	std::cout << "Enter your darkest secret :";
 	if (!(std::getline(std::cin, s)))
 		return ;
-	if(std::cin.good() == 0)
-		return  ; 
 	if(s.length() != 0 && s.empty() == false)
 	{
 		tmp.setDarksecret(s);
@@ -171,9 +161,9 @@ void	Phonebook::SEARCH()
 
 	if ((std::cin >> s) && (s[0] >= '0' && s[0] < '8') && (s.length() == 1))
 	{
+		if (!std::cin.good())
+			return ;
 		i = ft_stoi(s);
-		if(std::cin.good() == 0)
-			return  ;
 		std::cout << "Firstname is : " << _contact[i].getFirstname() << std::endl;
 		std::cout << "Lastname is : " <<_contact[i].getLastname() << std::endl;
 		std::cout << "Nickname is : " <<_contact[i].getNickname() << std::endl;
@@ -182,8 +172,8 @@ void	Phonebook::SEARCH()
 	}
 	else
 	{
-	 	if(std::cin.good() == 0)
-			return  ;
+		if (!std::cin.good())
+			return ;
 		std::cout << "Bad index " << std::endl;
 	}
 	std::cin.ignore(1, '\n');

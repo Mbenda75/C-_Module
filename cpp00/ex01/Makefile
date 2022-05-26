@@ -6,7 +6,7 @@
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:34:29 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/25 16:43:34 by benmoham         ###   ########.fr        #
+#    Updated: 2022/05/26 13:11:30 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,4 +41,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean cpp.o re 
+.PHONY:			all clean fclean re 

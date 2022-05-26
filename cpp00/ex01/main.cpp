@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:33:08 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/25 18:42:49 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:30:43 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int ac, char **av)
 		return(1);
 	while(1)
 	{
-		if(std::cin.good() == 0)
+		if (!std::cin.good())
 			break ;
 		if (s.size())
 			std::cout << "s = " << s << '\n';
