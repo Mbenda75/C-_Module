@@ -1,64 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 19:12:58 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/26 14:08:14 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/30 18:27:58 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/31 14:58:17 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Zombie::Zombie()
+HumanA::HumanA()
 {
-	setName("Uno");
-    announce();
 }
 
-Zombie::Zombie(std::string name)
+HumanA::HumanA(std::string s, Weapon & weapon) : _name(s), _weapon(weapon)
 {
-	setName(name);
-    announce();
+	std::cout << "HumanA is create " << std::endl;
 }
+
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Zombie::~Zombie()
+HumanA::~HumanA()
 {
-	std::cout << _name << " is die" << std::endl;
+		std::cout << "HumanA is destroy " << std::endl;
 }
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-std::string 	Zombie::getName() const
+ void    HumanA::attack()
 {
-	return(this->_name);
-}
-
-void	Zombie::setName(std::string s)
-{
-	_name = s;
-}
-
+    std::cout << _name << " attack with their " << _weapon.getType() << std::endl;
+} 
+ 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Zombie::announce(void) const
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
 
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
 
 
 /* ************************************************************************** */

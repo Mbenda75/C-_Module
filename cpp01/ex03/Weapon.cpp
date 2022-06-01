@@ -1,64 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 19:12:58 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/26 14:08:14 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/30 18:28:15 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/31 14:45:44 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Zombie::Zombie()
+Weapon::Weapon()
 {
-	setName("Uno");
-    announce();
 }
 
-Zombie::Zombie(std::string name)
+Weapon::Weapon(std::string name) :  _type(name)
 {
-	setName(name);
-    announce();
 }
+
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Zombie::~Zombie()
+Weapon::~Weapon()
 {
-	std::cout << _name << " is die" << std::endl;
 }
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-std::string 	Zombie::getName() const
-{
-	return(this->_name);
-}
-
-void	Zombie::setName(std::string s)
-{
-	_name = s;
-}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Zombie::announce(void) const
+
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
+
+std::string 	Weapon::getType() const
 {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return(this->_type);
 }
 
-
+void	Weapon::setType(std::string s)
+{
+	_type = s;
+}
 
 /* ************************************************************************** */

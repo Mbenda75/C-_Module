@@ -1,64 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 19:12:58 by benmoham          #+#    #+#             */
-/*   Updated: 2022/05/26 14:08:14 by benmoham         ###   ########.fr       */
+/*   Created: 2022/05/30 18:27:53 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/31 16:14:32 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Zombie::Zombie()
+HumanB::HumanB()
 {
-	setName("Uno");
-    announce();
+	_weapon = NULL;
 }
 
-Zombie::Zombie(std::string name)
+HumanB::HumanB(std::string s):_name(s)
 {
-	setName(name);
-    announce();
+	std::cout << "HumanB is create " << std::endl;
+	_weapon = NULL;
 }
+
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Zombie::~Zombie()
+HumanB::~HumanB()
 {
-	std::cout << _name << " is die" << std::endl;
+		std::cout << "HumanB is destroy " << std::endl;
 }
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-std::string 	Zombie::getName() const
-{
-	return(this->_name);
-}
-
-void	Zombie::setName(std::string s)
-{
-	_name = s;
-}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Zombie::announce(void) const
+void    HumanB::attack()
 {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	if (_weapon != NULL)
+    	std::cout << _name << " attack with their " << _weapon->getType() << std::endl;
+	else
+		std::cout << "The name of the weapon is not set " << std::endl;
+} 
+
+
+ void	HumanB::setWeapon(Weapon & weapon)
+{
+	_weapon = &weapon;
 }
-
-
-
+ 
 /* ************************************************************************** */

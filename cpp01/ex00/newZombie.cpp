@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/26 13:34:42 by benmoham          #+#    #+#             */
+/*   Updated: 2022/05/26 13:43:26 by benmoham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 /*
@@ -7,12 +19,7 @@
 Zombie* newZombie( std::string name )
 {
     Zombie *ret = new Zombie(name);
-    // ret->setName(name);
-    // ret->announce();
     return (ret);
 }
-// It creates a zombie, name it, and return it so you can use it outside of the function
-// scope.
-
 
 /* ************************************************************************** */

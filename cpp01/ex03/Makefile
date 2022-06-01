@@ -5,23 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/23 19:19:20 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/26 13:45:13 by benmoham         ###   ########.fr        #
+#    Created: 2022/05/30 18:28:57 by benmoham          #+#    #+#              #
+#    Updated: 2022/05/31 14:44:51 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC = 	main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		RandomChump.cpp\
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp 
 		
 
 OBJS			= $(SRC:.cpp=.o)
 
-NAME			=	Zombie
+NAME			=	Fight
 
-CFLAGS			= -std=c++98 -Wall -Wextra -Werror -std=c++98
+CFLAGS			= -std=c++98 -Wall -Wextra -Werror
 
 RM				= rm -f
 
