@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:50:45 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/01 16:07:35 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:23:00 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@ int main(int ac, char **av)
 {
     Harl lvl;   
     std::string level;
-    std::string tmp = av[1];
-	
+    std::string tmp;
+
+    if (ac != 2)
+    {
+        std::cout << "Error" << std::endl;
+        return (1);
+    }
+
+    tmp = av[1];    
 	if (ac == 2 && (tmp == "DEBUG" || tmp == "INFO" || tmp == "WARNING" || tmp == "ERROR" ))
 	{
 		level = tmp;

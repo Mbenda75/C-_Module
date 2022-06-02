@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:17:17 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/02 14:04:47 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:24:50 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int main(int ac, char **av)
 {
     std::string tmp;
     std::string tmp2;
-    DIR *file;
     
     if (ac != 4)
     {
