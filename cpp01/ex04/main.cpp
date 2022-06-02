@@ -6,13 +6,12 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:17:17 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/01 16:56:03 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:04:47 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include <cstring>
 
 std::string s1;
 std::string s2;
@@ -37,7 +36,8 @@ int main(int ac, char **av)
 {
     std::string tmp;
     std::string tmp2;
-   
+    DIR *file;
+    
     if (ac != 4)
     {
         std::cout << "Problem with program arguments " << std::endl;
@@ -47,7 +47,6 @@ int main(int ac, char **av)
     s2 = av[3];
     len_s1 = s1.size();
     len_s2 = s2.size();
-    std::cout << "len 1 et 2 is : " << len_s1 << " : " << len_s2<<std::endl;
     std::ifstream ifs(av[1]);
     if (ifs.is_open() == false)
     {
@@ -63,7 +62,6 @@ int main(int ac, char **av)
     {
         tmp2= my_replace(tmp);
         ofs << tmp2 << std::endl;
-        std::cout << "tmp == "  << tmp2  << std::endl;
     }
     ifs.close();
     ofs.close();
