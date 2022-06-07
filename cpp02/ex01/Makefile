@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/14 13:41:13 by benmoham          #+#    #+#              #
-#    Updated: 2022/05/26 13:15:11 by benmoham         ###   ########.fr        #
+#    Created: 2022/06/02 14:32:32 by benmoham          #+#    #+#              #
+#    Updated: 2022/06/07 15:31:07 by benmoham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC=    megaphone.cpp \
 
+SRC = 	main.cpp\
+		Fixed.cpp
+		
 OBJS			= $(SRC:.cpp=.o)
 
-NAME			= megaphone
-
-CFLAGS			= -Wall -Wextra -Werror -std=c++98
+NAME			=	Fixed
+CFLAGS			= -std=c++98 -Wall -Wextra -Werror
 
 RM				= rm -f
 
@@ -26,8 +27,8 @@ CC				= c++
 				$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-				
+				$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+
 all:			$(NAME)
 
 clean:
@@ -38,4 +39,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean  re
+.PHONY:			all clean fclean re 
