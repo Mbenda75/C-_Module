@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 14:32:54 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/08 12:05:22 by benmoham         ###   ########.fr       */
+/*   Created: 2022/06/08 13:04:51 by benmoham          #+#    #+#             */
+/*   Updated: 2022/06/08 13:04:53 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "DiamondTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Fixed::Fixed():_result(0)
+DiamondTrap::DiamondTrap()
 {
-	std::cout<<  "\e[0;33mDefault Constructor called\e[0m"  << std::endl;
 }
 
-Fixed::Fixed( const Fixed & src )
+DiamondTrap::DiamondTrap( const DiamondTrap & src )
 {
-	std::cout<< "\e[0;33mCopy Constructor called\e[0m" << std::endl;
-	_result = src._result;
-	//*this = src;
 }
 
 
@@ -33,9 +29,8 @@ Fixed::Fixed( const Fixed & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Fixed::~Fixed()
+DiamondTrap::~DiamondTrap()
 {
-	std::cout<< "\e[0;33mDestructor called\e[0m"<< std::endl;
 }
 
 
@@ -43,17 +38,22 @@ Fixed::~Fixed()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Fixed &				Fixed::operator=( Fixed const & rhs )
+DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	std::cout<< "\e[0;31mCopy assignment operator called\e[0m"<< std::endl;
-	if ( this != &rhs )
-	{
-		this->_result = rhs.getRawBits();
-	}
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
 	return *this;
 }
 
- 
+std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
+{
+	//o << "Value = " << i.getValue();
+	return o;
+}
+
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -62,17 +62,6 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-int		Fixed::getRawBits() const
-{
-	std::cout<< "\e[0;32mgetRawBits member function called\e[0m"<< std::endl;
-	return(_result);
-}
-
-void	Fixed::setRawBits(int const raw)
-{
-	_result = raw;
-}
 
 
 /* ************************************************************************** */

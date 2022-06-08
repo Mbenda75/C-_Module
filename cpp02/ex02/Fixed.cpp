@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:32:54 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/07 20:38:20 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:40:41 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,11 +138,11 @@ Fixed	Fixed::operator/( Fixed const & rhs)
 }
 
 //	increment and decrement operators
-
-Fixed	Fixed::operator++(int) 
+//Prefix
+ Fixed	Fixed::operator++(int) 
 {
 	Fixed copy = *this;
-
+	
 	this->operator++();
 	return (copy);
 }
@@ -155,7 +155,7 @@ Fixed	Fixed::operator--(int)
 	return (copy);
 }
 
-
+//Sufix
 Fixed	&Fixed::operator++(void)
 {
 	this->_result++;
@@ -167,7 +167,7 @@ Fixed	&Fixed::operator--(void)
 	this->_result--;
 	return (*this);
 }
- 
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
