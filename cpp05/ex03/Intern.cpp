@@ -46,5 +46,5 @@ Form* Intern::makeForm(std::string name, const std::string target)
 		std::cout << "The form name '" << name << "' doesn't match with our current forms" << std::endl;
 		return (NULL);
 	}
-	return (f[count](target));
+	return ();
 }
