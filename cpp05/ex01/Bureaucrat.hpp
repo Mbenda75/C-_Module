@@ -3,7 +3,9 @@
 
 # include <iostream>
 # include <string>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 
@@ -19,6 +21,7 @@ class Bureaucrat
 		void		setGrade(int g);
 		void			Decr();
 		void			Inc();
+		 void			signForm(const Form & s );
 		Bureaucrat &		operator=( Bureaucrat const & rhs );
 
 	// Exceptions
@@ -31,7 +34,7 @@ class Bureaucrat
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char * what() const throw();
+				virtual const char * what() const throw();
 		};
 
 	private:
