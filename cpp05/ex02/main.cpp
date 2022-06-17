@@ -6,7 +6,7 @@
 /*   By: benmoham <benmoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 14:19:45 by benmoham          #+#    #+#             */
-/*   Updated: 2022/06/16 20:14:11 by benmoham         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:54:06 by benmoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 int main()
 {
         //--------------------Bureaucrat who can sign-------------------------------------
+		Bureaucrat B4("B4", 26);
+		ShrubberyCreationForm p3("p3");
+		std::cout << "Signed lvl :145    Exec lvl : 137 "<< B4.getName() << " Grade : " << B4.getGrade() << std::endl;
+
+		p3.BeSigned(B4);
+		B4.signForm(p3);
+		B4.executeForm(p3);
+
 		Bureaucrat B1("B1", 45);
 		RobotomyRequestForm robot("Robot");
         std::cout << "Signed lvl :72    Exec lvl : 45 " << B1.getName() << " Grade : " << B1.getGrade() << std::endl;
@@ -56,11 +64,11 @@ int main()
 		B3.executeForm(p2);
 
 
-		Bureaucrat B4("B4", 26);
-		ShrubberyCreationForm p3("p3");
-        std::cout << "Signed lvl :25     Exec lvl : 5 "<< B4.getName() << " Grade : " << B4.getGrade() << std::endl;
+		Bureaucrat B5("B5", 145);
+		ShrubberyCreationForm p4("p4");
+        std::cout << "Signed lvl :145     Exec lvl : 137 "<< B5.getName() << " Grade : " << B5.getGrade() << std::endl;
 
-        p3.BeSigned(B4);
-		B4.signForm(p3);
-		B4.executeForm(p3);
+        p4.BeSigned(B5);
+		B5.signForm(p4);
+		B5.executeForm(p4);
 }

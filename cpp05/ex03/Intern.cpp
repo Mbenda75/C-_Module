@@ -8,14 +8,18 @@ Intern::Intern()
 {
 }
 
-Intern::Intern(const Intern &other)
+Intern::Intern(const Intern &src)
 {
-	*this = other;
+	*this = src;
 }
 
-Intern &Intern::operator=(const Intern &other)
+/*
+** --------------------------------OVERLOAD --------------------------------
+*/
+
+Intern &Intern::operator=(const Intern &rhs)
 {
-	(void)other;
+	(void)rhs;
 	return (*this);
 }
 
@@ -27,24 +31,66 @@ Intern::~Intern()
 {
 }
 
-const std::string tab[3] = { "shrubbery creation", "robotomy request", "presidential pardon" };
+/*
+** -------------------------------- METHODS --------------------------------
+*/
 
-Form* Intern::makeForm(std::string name, const std::string target)
+Form * Intern::shrubbery(std::string form, std::string target)
 {
-	int count = -1;
+    std::cout << "Intern creates " << form << std::endl;
+	return (new ShrubberyCreationForm(target));
+}
+Form *	Intern::robotomy(std::string form, std::string target)
+{
+	std::cout << "Intern creates " << form << std::endl;
+	return (new RobotomyRequestForm(target));
+}
+Form *	Intern::presidential(std::string form, std::string target)
+{
+	std::cout << "Intern creates " << form << std::endl;
+	return (new PresidentialPardonForm(target));
+}
 
-	for (int i = 0; i < 3; i++)
+Form * Intern::makeForm(std::string name, std::string target)
+{
+    this->setName();
+    this->setPtr();
+	int i = 0;
+
+	try
 	{
-		if (name == tab[i])
+		while (i < 3)
 		{
-			count = i;
-			break;
+			if (_tab[i].name == name)
+				return ((this->*_tab[i].ptr)(name, target));
+			i++;
 		}
+		throw FormDontMatch();
 	}
-	if (count == -1)
+	catch(Intern::FormDontMatch e)
 	{
-		std::cout << "The form name '" << name << "' doesn't match with our current forms" << std::endl;
-		return (NULL);
+		std::cerr << e.what() << '\n';
 	}
-	return ();
+	
+    
+	return (NULL);
+}
+
+void Intern::setName(void)
+{
+	this->_tab[0].name = "shrubbery creation";
+	this->_tab[1].name = "robotomy request";
+	this->_tab[2].name = "presidential pardon";
+}
+
+void Intern::setPtr(void)
+{
+	this->_tab[0].ptr = &Intern::shrubbery;
+	this->_tab[1].ptr = &Intern::robotomy;
+	this->_tab[2].ptr = &Intern::presidential;
+}
+
+const char *Intern::FormDontMatch::what() const throw()
+{
+	return ("Intern exeption : The form does not match any of ours");
 }

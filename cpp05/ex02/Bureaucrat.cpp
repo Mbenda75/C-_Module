@@ -131,6 +131,12 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Exception : Grade is too low");
 }
 
+const char *Bureaucrat::StringIsEmpty::what() const throw()
+{
+	return ("Exception : String is empty");
+}
+
+
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Exception : Grade is too high ");
@@ -148,16 +154,10 @@ void	Bureaucrat::signForm(const Form & s )
 
 void Bureaucrat::executeForm(Form const & form) const
 {
-	try
-	{
-		form.execute(*this);
-		if (form.getSigned() == true)
-			std::cout << this->getName() << " executed " << form.getName() << std::endl;
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << this->getName() << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
-	}
+	form.execute(*this);
+	if (form.getSigned() == true)
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	return ;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

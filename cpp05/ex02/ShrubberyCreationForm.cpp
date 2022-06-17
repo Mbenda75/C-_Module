@@ -44,6 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->TryExec(executor))
 		return;
+	std::cout << executor.getName() << " create the file " << std::endl;
 	std::string str = this->_target;
 	str.append("_shrubbery");
 	std::ofstream file(str.c_str());

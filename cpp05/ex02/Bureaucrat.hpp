@@ -18,7 +18,6 @@ class Bureaucrat
 
 		const std::string getName() const;
 		int			getGrade() const;
-		void		setGrade(int g);
 		void			Decr();
 		void			Inc();
 		 void			signForm(const Form & s );
@@ -33,6 +32,11 @@ class Bureaucrat
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
+		};
+		class StringIsEmpty : public std::exception
 		{
 			public:
 				virtual const char * what() const throw();
